@@ -1,6 +1,6 @@
 name := "skeleton"
 
-organization := "com.github.fractal"
+organization := "com.cascadeofinsights"
 
 version := "1.2"
 
