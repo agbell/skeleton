@@ -5,19 +5,14 @@ This project aims to simplify creating a project from scratch, ready to use in y
 It's arguably simpler than typesafe activator or g8 because it doesn't require any additional tools, just clone, build and run.
 It provides a simple way to have a project running with the following tools configured:
 
-     Scala 2.11.7
-     SBT 0.13.9
-     ScalaTest 2.2.4
-     ScalaCheck 1.12.5
-     IntelliJ IDEA 
-     Scala-IDE 3.0+
-     Jenkins (test Reporting and code coverage)
-     ScalaStyle
 
-Requires
----------------
-* Please download latest version of SBT.
-* [sbt 0.13.9](http://www.scala-sbt.org)
+
+ToDo
+----
+*  BDD Tests
+*  read me template
+*  Command line branch
+*  http service fork
 
 Use
 ---------------

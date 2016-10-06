@@ -1,5 +1,9 @@
 import com.typesafe.sbt.SbtScalariform.ScalariformKeys
-import scalariform.formatter.preferences.{AlignArguments, AlignParameters, AlignSingleLineCaseStatements, CompactControlReadability, DanglingCloseParenthesis, DoubleIndentClassDeclaration, FormatXml, FormattingPreferences, IndentSpaces, IndentWithTabs, MultilineScaladocCommentsStartOnFirstLine, PlaceScaladocAsterisksBeneathSecondAsterisk, Preserve, PreserveSpaceBeforeArguments, SpaceBeforeColon, SpaceInsideBrackets, SpaceInsideParentheses, SpacesAroundMultiImports, SpacesWithinPatternBinders}
+
+//import de.johoop.cpd4sbt.CopyPasteDetector._
+//import de.johoop.cpd4sbt.{OutputType, ReportType}
+
+import scalariform.formatter.preferences._
 
 
 name := "skeleton"
@@ -48,3 +52,8 @@ testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-l", "org.scala
 scalastyleConfig <<= baseDirectory { _ / "src/main/config" / "scalastyle-config.xml" }
 
 coverageEnabled := true
+
+//cpdSettings - not working
+//enablePlugins(CopyPasteDetector)
+//cpdReportType := ReportType.Simple
+//cpdOutputType := OutputType.Console
