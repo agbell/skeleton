@@ -5,7 +5,6 @@ import com.typesafe.sbt.SbtScalariform.ScalariformKeys
 
 import scalariform.formatter.preferences._
 
-
 name := "skeleton"
 
 organization := "com.cascadeofinsights"
@@ -16,13 +15,11 @@ scalaVersion := "2.11.7"
 
 resolvers += Resolver.sonatypeRepo("snapshots")
 
-addCompilerPlugin("org.psywerx.hairyfotr" %% "linter" % "0.1-SNAPSHOT")
 
-//Define dependencies. These ones are only required for Test and Integration Test scopes.
 libraryDependencies ++= Seq(
     "org.scalatest"   %% "scalatest"    % "2.2.4"   % "test,it"
 )
-
+// code style from marathon
 lazy val formatSettings = SbtScalariform.scalariformSettings ++ Seq(
   ScalariformKeys.preferences := FormattingPreferences()
     .setPreference(AlignArguments, false)
@@ -46,9 +43,16 @@ lazy val formatSettings = SbtScalariform.scalariformSettings ++ Seq(
 
 scalacOptions ++= List("-feature","-deprecation", "-unchecked", "-Xlint")
 
-testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-l", "org.scalatest.tags.Slow", "-u","target/junit-xml-reports", "-oD", "-eS")
+/*
+Static Analysis
+ */
+addCompilerPlugin("org.psywerx.hairyfotr" %% "linter" % "0.1-SNAPSHOT")
 
 
+//wartremoverWarnings ++= Warts.all // Some false positives
+wartremoverWarnings ++= Warts.unsafe //No false positive
+
+//add Scapegoat to compile
 (compile in Compile) <<= (compile in Compile) dependsOn scapegoat
 
 //Style Check section
