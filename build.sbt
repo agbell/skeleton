@@ -48,6 +48,9 @@ scalacOptions ++= List("-feature","-deprecation", "-unchecked", "-Xlint")
 
 testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-l", "org.scalatest.tags.Slow", "-u","target/junit-xml-reports", "-oD", "-eS")
 
+
+(compile in Compile) <<= (compile in Compile) dependsOn scapegoat
+
 //Style Check section
 scalastyleConfig <<= baseDirectory { _ / "src/main/config" / "scalastyle-config.xml" }
 
