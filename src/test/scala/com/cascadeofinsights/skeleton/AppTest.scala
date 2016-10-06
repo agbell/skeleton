@@ -1,9 +1,10 @@
-package fractal.skeleton
+package com.cascadeofinsights.skeleton
 
-import collection.mutable.Stack
 import org.scalatest._
 
-class SimpleTest extends FlatSpec with Matchers {
+import scala.collection.mutable.Stack
+
+class AppTest extends FlatSpec with Matchers {
 
   "A Stack" should "pop values in last-in-first-out order" in {
     val stack = new Stack[Int]
