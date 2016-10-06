@@ -4,6 +4,6 @@ object SimpleApp extends App {
   println("What is the meaning of Life, the Universe, and Everything?")
   lazy val theAnswer = 42
   Thread.sleep(2000)
-  println (s"The answer is: ${theAnswer}")
-  val (a,b) = (1,2)
+  println(s"The answer is: ${theAnswer}")
+  val (a, b) = (1, 2)
 }
