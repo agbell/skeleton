@@ -18,7 +18,6 @@ TODO: Write credits
 
 ToDo
 ----
-*  BDD Tests
 *  Command line branch
-*  http service fork
+*  http service branch
 
