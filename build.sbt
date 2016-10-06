@@ -6,6 +6,9 @@ version := "1.2"
 
 scalaVersion := "2.11.7"
 
+resolvers += Resolver.sonatypeRepo("snapshots")
+addCompilerPlugin("org.psywerx.hairyfotr" %% "linter" % "0.1-SNAPSHOT")
+
 //Define dependencies. These ones are only required for Test and Integration Test scopes.
 libraryDependencies ++= Seq(
     "org.scalatest"   %% "scalatest"    % "2.2.4"   % "test,it"
